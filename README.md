@@ -18,7 +18,7 @@ Para rodar o projeto deve ter instalado o Node JS e o NPM e rodar os comandos ab
 
 #### Rota de consulta de encomendas
 
-```http
+```
   GET /rastrear/:codigo
 ```
 
@@ -28,7 +28,7 @@ Para rodar o projeto deve ter instalado o Node JS e o NPM e rodar os comandos ab
 
 #### Retorna um JSON
 
-```http
+```
   Deve retornar um JSON com os dados de rastreamento do pedido como no exemplo abaixo.
   {
     "objetos": [
