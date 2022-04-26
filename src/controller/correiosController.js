@@ -36,8 +36,20 @@ export const consultaPrecoEPrazo = async (req, res) => {
         nCdServico: ['04014', '04510'], //Array com os códigos de serviço
         nVlDiametro: '0',
     };
+
+    const consultaBody = {        
+        sCepOrigem: req.body.sCepOrigem,
+        sCepDestino: req.body.sCepDestino,
+        nVlPeso: req.body.nVlPeso,
+        nCdFormato: req.body.nCdFormato,
+        nVlComprimento: req.body.nVlComprimento,
+        nVlAltura: req.body.nVlAltura,
+        nVlLargura: req.body.nVlLargura,
+        nCdServico: req.body.nCdServico,
+        nVlDiametro: req.body.nVlDiametro
+    };
       
-    calcularPrecoPrazo(args).then((response) => {
+    calcularPrecoPrazo(consultaBody).then((response) => {
         console.log(response);
         return res.json(response);
     });
