@@ -170,17 +170,17 @@ Para rodar o projeto deve ter instalado o Node JS e o NPM e rodar os comandos ab
 
 #### Rota de consulta de CEP
 
-```http
+```
   GET /consulta/:cep
 ```
 
 | Parâmetro   | Tipo       | Descrição                           |
 | :---------- | :--------- | :---------------------------------- |
-| `codigo` | `string` | **Obrigatório**. O código de rastreamento da encomenda |
+| `cep` | `string` | **Obrigatório**. O cep do endereço a ser pesquisado |
 
 #### Retorna um JSON
 
-```http
+```
   Deve retornar um JSON com os dados do CEP como no exemplo abaixo.
 
 {
