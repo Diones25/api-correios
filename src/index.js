@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import chalk from 'chalk';
-import router from './src/routes/router.js';
+import router from './routes/router.js';
 
 const app = express();
 const port = 6000;
