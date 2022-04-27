@@ -24,23 +24,28 @@ export const buscaCep = async (req, res) => {
 export const consultaPrecoEPrazo = async (req, res) => {
     const cep = req.params.cep;
 
-    let args = {
-        // Não se preocupe com a formatação dos valores de entrada do cep, qualquer uma será válida (ex: 21770-200, 21770 200, 21asa!770@###200 e etc),
-        sCepOrigem: '81200100',
-        sCepDestino: '21770200',
-        nVlPeso: '1',
-        nCdFormato: '1',
-        nVlComprimento: '20',
-        nVlAltura: '20',
-        nVlLargura: '20',
-        nCdServico: ['04014', '04510'], //Array com os códigos de serviço
-        nVlDiametro: '0',
-    };
+    /**
+     * JSON de exemplo para enviar no corpo da requisição
+     * {
+            "sCepOrigem": "81200100",
+            "sCepDestino": "21770200",
+            "nVlPeso": "1",
+            "nCdFormato": "1",
+            "nVlComprimento": "20",
+            "nVlAltura": "20",
+            "nVlLargura": "20",
+            "nCdServico": [
+                "04014", 
+                "04510"
+            ],
+            "nVlDiametro": "0"
+        }
+    */
 
     const consultaBody = {        
         sCepOrigem: req.body.sCepOrigem,
         sCepDestino: req.body.sCepDestino,
-        nVlPeso: req.body.nVlPeso,
+        nVlPeso: req.body.nVlPeso, 
         nCdFormato: req.body.nCdFormato,
         nVlComprimento: req.body.nVlComprimento,
         nVlAltura: req.body.nVlAltura,
@@ -49,8 +54,7 @@ export const consultaPrecoEPrazo = async (req, res) => {
         nVlDiametro: req.body.nVlDiametro
     };
       
-    calcularPrecoPrazo(consultaBody).then((response) => {
-        console.log(response);
+    calcularPrecoPrazo(consultaBody).then((response) => {        
         return res.json(response);
     });
 }

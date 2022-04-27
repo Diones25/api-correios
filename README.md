@@ -197,6 +197,61 @@ Para rodar o projeto deve ter instalado o Node JS e o NPM e rodar os comandos ab
 }
 ````
 
+#### Rota de consulta de preços e prazo de entrega de uma encomenda
+
+```
+  POST /consulta/prazo/entrega
+```
+
+| Parâmetros do Body   | Tipo       | Descrição                           |
+| :--------------- | :--------- | :---------------------------------- |
+| `sCepOrigem`     | `string` | CEP de Origem                             
+| `sCepDestino`    | `string` | CEP de Destino                                                   |
+| `nVlPeso`        | `string` | Peso da encomenda                                                  |
+| `nCdFormato`     | `string` | Formato da encomenda                                                  |
+| `nVlComprimento` | `string` | Comprimento da encomenda                                                    |
+| `nVlAltura`      | `string` | Altura da encomenda                                                    |
+| `nVlLargura`     | `string` | Largura da encomenda                                                   |
+| `nCdServico`     | `string` | Código do serviço                                                    |
+| `nVlDiametro`    | `string` | Diâmetro da encomenda                                                    |
+
+#### Retorna um JSON
+
+```
+  Deve retornar um JSON com os dados de prazo e valor da encomenda, como no exemplo abaixo.
+
+[
+  {
+    "Codigo": "04014",
+    "Valor": "53,10",
+    "PrazoEntrega": "6",
+    "ValorSemAdicionais": "53,10",
+    "ValorMaoPropria": "0,00",
+    "ValorAvisoRecebimento": "0,00",
+    "ValorValorDeclarado": "0,00",
+    "EntregaDomiciliar": "S",
+    "EntregaSabado": "S",
+    "obsFim": "O CEP de destino está sujeito a condições especiais de entrega pela  ECT e será realizada com o acréscimo de até 5 (cinco) dias úteis ao prazo regular.",
+    "Erro": "011",
+    "MsgErro": "O CEP de destino está sujeito a condições especiais de entrega pela  ECT e será realizada com o acréscimo de até 5 (cinco) dias úteis ao prazo regular."
+  },
+  {
+    "Codigo": "04510",
+    "Valor": "27,80",
+    "PrazoEntrega": "12",
+    "ValorSemAdicionais": "27,80",
+    "ValorMaoPropria": "0,00",
+    "ValorAvisoRecebimento": "0,00",
+    "ValorValorDeclarado": "0,00",
+    "EntregaDomiciliar": "S",
+    "EntregaSabado": "S",
+    "obsFim": "O CEP de destino está sujeito a condições especiais de entrega pela  ECT e será realizada com o acréscimo de até 5 (cinco) dias úteis ao prazo regular.",
+    "Erro": "011",
+    "MsgErro": "O CEP de destino está sujeito a condições especiais de entrega pela  ECT e será realizada com o acréscimo de até 5 (cinco) dias úteis ao prazo regular."
+  }
+]
+````
+
 ## 🚀 Sobre mim
 Eu sou uma pessoa desenvolvedora full-stack, usando as tecnologias Node JS no Back-end e React no Fron-end, API Restfull e estudando outras tecnologias interessantes e em alta no mercado.
 
