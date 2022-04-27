@@ -21,8 +21,7 @@ export const buscaCep = async (req, res) => {
     });
 }
 
-export const consultaPrecoEPrazo = async (req, res) => {
-    const cep = req.params.cep;
+export const consultaPrecoEPrazo = async (req, res) => {    
 
     /**
      * JSON de exemplo para enviar no corpo da requisição
