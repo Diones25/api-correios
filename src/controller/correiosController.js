@@ -9,15 +9,19 @@ export const rastreioEncomendas = async (req, res) => {
     .then(function (response) {
 
       //console.log(JSON.stringify(response.data));
-      return res.json(response.data);  
-    })
+      return res.status(200).json(response.data);  
+    }).catch(() => {
+        return res.status(400).json({ message: "Objeto não encontrado na base de dados dos Correios!" });
+    });
 }
 
 export const buscaCep = async (req, res) => {
     const cep = req.params.cep;
-
+    
     consultarCep(cep).then((response) => {
-        return res.json(response); 
+        return res.status(200).json(response); 
+    }).catch(() => {
+        return res.status(400).json({ message: `Cep: ${cep} não existe na nossa base` });
     });
 }
 
