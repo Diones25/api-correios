@@ -206,14 +206,14 @@ Para rodar o projeto deve ter instalado o Node JS e o NPM e rodar os comandos ab
 | Parâmetros do Body   | Tipo       | Descrição                           |
 | :--------------- | :--------- | :---------------------------------- |
 | `sCepOrigem`     | `string` | CEP de Origem                             
-| `sCepDestino`    | `string` | CEP de Destino                                                   |
-| `nVlPeso`        | `string` | Peso da encomenda                                                  |
-| `nCdFormato`     | `string` | Formato da encomenda                                                  |
-| `nVlComprimento` | `string` | Comprimento da encomenda                                                    |
-| `nVlAltura`      | `string` | Altura da encomenda                                                    |
-| `nVlLargura`     | `string` | Largura da encomenda                                                   |
-| `nCdServico`     | `string` | Código do serviço                                                    |
-| `nVlDiametro`    | `string` | Diâmetro da encomenda                                                    |
+| `sCepDestino`    | `string` | CEP de Destino                            |
+| `nVlPeso`        | `string` | Peso da encomenda                         |
+| `nCdFormato`     | `string` | Formato da encomenda                      |
+| `nVlComprimento` | `string` | Comprimento da encomenda                  |
+| `nVlAltura`      | `string` | Altura da encomenda                       |
+| `nVlLargura`     | `string` | Largura da encomenda                      |
+| `nCdServico`     | `string` | Código do serviço                         |
+| `nVlDiametro`    | `string` | Diâmetro da encomenda                     |
 
 #### Retorna um JSON
 
