@@ -3,16 +3,13 @@ import { consultarCep, calcularPrecoPrazo } from 'correios-brasil';
 
 export const rastreioEncomendas = async (req, res) => {
     const codigo = req.params.codigo;
-    // Código de rastreio utilizado como exemplo: QH991577104BR
-
-    axios.get(`https://proxyapp.correios.com.br/v1/sro-rastro/${codigo}`) 
-    .then(function (response) {
-
-      //console.log(JSON.stringify(response.data));
-      return res.status(200).json(response.data);  
-    }).catch(() => {
-        return res.status(400).json({ message: "Objeto não encontrado na base de dados dos Correios!" });
-    });
+    
+    try {    
+        const response = await axios.get(`https://proxyapp.correios.com.br/v1/sro-rastro/${codigo}`);
+        return res.status(200).json(response.data);        
+    } catch (error) {
+        return res.status(400).json({ message: "Objeto não encontrado na base de dados dos Correios!" });        
+    }
 }
 
 export const buscaCep = async (req, res) => {
