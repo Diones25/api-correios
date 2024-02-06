@@ -1,4 +1,4 @@
-![img](./src/assets/node.png)
+![img](./back-end//src/assets/node.png)
 ## API de consulta de encomendas, cep e consulta de preço e prazo
 
 Esta API tem como finalidade realizar consultas para fazer rastreamento encomendas dos correios, consulta CEPs, e calculo de preço e prazo de entrega.
